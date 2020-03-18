@@ -20,5 +20,8 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Run a one-line script
-      run: ls -la /usr/bin/clang-for*
+      run: |
+        clang-format --version
+        update-alternatives --install /usr/bin/clang-format clang-format /usr/bin/clang-format-8 1000
+        clang-format --version
       
